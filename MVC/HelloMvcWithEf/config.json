@@ -1,0 +1,7 @@
+{
+    "Data": {
+        "DefaultConnection": {
+            "Connectionstring": "Data Source=.\\SQLExpress;Initial Catalog=ValuesDb;Integrated Security=True;"
+        }
+    }
+}

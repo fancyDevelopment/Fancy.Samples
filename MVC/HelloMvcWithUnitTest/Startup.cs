@@ -19,6 +19,7 @@ namespace Fancy.HelloMvc
                 routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
             });
 
+			// If no route matches show welcome page
             app.UseWelcomePage();
         }
 	}

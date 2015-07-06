@@ -1,0 +1,25 @@
+{	
+	"version": "1.0.0-*",
+	"webroot": "wwwroot",
+    "exclude": [
+        "wwwroot"
+    ],
+    "dependencies": {
+        "Kestrel": "1.0.0-beta4",
+        "Microsoft.AspNet.Diagnostics": "1.0.0-beta4",
+        "Microsoft.AspNet.Mvc": "6.0.0-beta4",
+        "Microsoft.AspNet.Server.IIS": "1.0.0-beta4",
+        "Microsoft.AspNet.Server.WebListener": "1.0.0-beta4",
+		"xunit": "2.1.0-*",
+        "xunit.runner.dnx": "2.1.0-*"
+    },
+	"commands": {
+        "web": "Microsoft.AspNet.Hosting --server Microsoft.AspNet.Server.WebListener --server.urls http://localhost:5001",
+        "kestrel": "Microsoft.AspNet.Hosting --server Kestrel --server.urls http://localhost:5004",
+		"test": "xunit.runner.dnx"
+    },
+    "frameworks": {
+        "dnx451": {},
+        "dnxcore50": {}
+    }
+}

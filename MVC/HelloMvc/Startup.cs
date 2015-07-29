@@ -14,10 +14,7 @@ namespace Fancy.HelloMvc
         {
             app.UseErrorPage();
 
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
-            });
+            app.UseMvc();
 
             app.UseWelcomePage();
         }

@@ -7,9 +7,19 @@ using Fancy.HelloMvc;
 namespace HelloMvcWithEfMigrations
 {
     [ContextType(typeof(ValuesContext))]
-    partial class ValuesContextModelSnapshot : ModelSnapshot
+    partial class Initial
     {
-        public override void BuildModel(ModelBuilder builder)
+        public override string Id
+        {
+            get { return "20150729184656_Initial"; }
+        }
+
+        public override string ProductVersion
+        {
+            get { return "7.0.0-beta6-13815"; }
+        }
+
+        public override void BuildTargetModel(ModelBuilder builder)
         {
             builder
                 .Annotation("ProductVersion", "7.0.0-beta6-13815")

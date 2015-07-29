@@ -8,12 +8,19 @@ namespace Fancy.HelloMvc
 	[Route("api/[controller]")]
     public class ValuesController : Controller
     {
+		private ValuesContext _dbContext;
+		
+		public ValuesController(ValuesContext dbContext)
+		{
+			_dbContext = dbContext;
+		}
+		
 		[HttpGet]
         public IEnumerable<Value> Get()
         {
             using(ValuesContext valuesContext = new ValuesContext())
 			{
-				return valuesContext.Values.ToList();
+				return _dbContext.Values.ToList();
 			}
         }
 		
@@ -23,8 +30,8 @@ namespace Fancy.HelloMvc
             using(ValuesContext valuesContext = new ValuesContext())
 			{
 				Value value = new Value() { Val = val };
-				valuesContext.Values.Add(value);
-				valuesContext.SaveChanges();
+				_dbContext.Values.Add(value);
+				_dbContext.SaveChanges();
 				return value.Id;
 			}
         }

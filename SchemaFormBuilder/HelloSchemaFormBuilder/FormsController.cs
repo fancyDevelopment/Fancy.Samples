@@ -13,9 +13,9 @@ namespace Fancy.Samples.HelloSchemaFormBuilder
             return schemaFormBuilder.CreateSchemaForm(typeof(SampleDto));
         }
 
-        [HttpPut]
+        [HttpPost]
         [Route("api/[controller]")]
-        public IActionResult PutSampleForm([FromBody] SampleDto sampleDto)
+        public IActionResult PostSampleForm([FromBody] SampleDto sampleDto)
         {
             return Json(sampleDto);
         }
